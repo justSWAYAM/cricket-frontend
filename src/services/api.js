@@ -5,7 +5,9 @@ import { getApiBaseUrl } from '../config';
 
 // Use backticks (`) to ensure the function executes as a fallback
 // This will use your AWS IP in production or localhost in development
-const API_BASE_URL = import.meta.env.VITE_API_URL || `${getApiBaseUrl()}/api`;
+const API_BASE_URL = import.meta.env.PROD 
+  ? "/api" 
+  : (import.meta.env.VITE_API_URL || getApiBaseUrl());
 
 /**
  * Custom fetch wrapper to handle Base URL and Security Headers
