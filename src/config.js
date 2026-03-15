@@ -2,7 +2,7 @@
 
 export const getApiBaseUrl = () => {
   if (import.meta.env.PROD) {
-    return import.meta.env.VITE_API_URL || `http://3.108.62.16:5001`; 
+    return ""; 
   }
   return `http://localhost:5001`;
 };
