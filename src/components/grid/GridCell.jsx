@@ -40,7 +40,7 @@ export default function GridCell({
           className="font-mono font-bold leading-tight"
           style={{
             color: isMultiplayer && marker ? markerColor : colors.accent,
-            fontSize: "clamp(11px, 2.8vw, 24px)",
+            fontSize: "clamp(8px, 1.4vw, 16px)",
             maxWidth: "100%",
             textWrap: "balance",
             overflowWrap: "anywhere",
