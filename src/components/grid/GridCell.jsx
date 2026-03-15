@@ -30,15 +30,25 @@ export default function GridCell({
     const markerOwner = marker ? (multiplayerPlayers[marker] || `Player ${marker}`) : "";
     return (
       <div
-        className="relative flex items-center justify-center p-3 text-center transition-all duration-200 w-full h-full"
+        className="relative flex items-center justify-center p-1.5 md:p-2 text-center transition-all duration-200 w-full h-full overflow-hidden"
         style={{
           background: isMultiplayer && marker ? `${markerColor}12` : colors.accentBg,
           border: `1px solid ${isMultiplayer && marker ? markerColor : colors.accentBorder}`,
         }}
       >
         <span
-          className="text-base font-mono font-bold tracking-wide leading-tight"
-          style={{ color: isMultiplayer && marker ? markerColor : colors.accent }}
+          className="font-mono font-bold leading-tight"
+          style={{
+            color: isMultiplayer && marker ? markerColor : colors.accent,
+            fontSize: "clamp(11px, 2.8vw, 24px)",
+            maxWidth: "100%",
+            textWrap: "balance",
+            overflowWrap: "anywhere",
+            wordBreak: "break-word",
+            whiteSpace: "normal",
+            lineHeight: 1.05,
+            letterSpacing: "0.02em",
+          }}
         >
           {player.name}
         </span>
@@ -136,7 +146,12 @@ export default function GridCell({
           animation: "pulse 1.5s ease-in-out infinite",
         }}
       >
-        <Logo size="lg" variant="xi" />
+        <div className="md:hidden">
+          <Logo size="md" variant="xi" />
+        </div>
+        <div className="hidden md:block">
+          <Logo size="lg" variant="xi" />
+        </div>
         <style>{`
           @keyframes pulse {
             0%, 100% { opacity: 1; }
@@ -156,7 +171,12 @@ export default function GridCell({
         border: `1px solid ${colors.border}`,
       }}
     >
-      <Logo size="lg" variant="xi" />
+      <div className="md:hidden">
+        <Logo size="md" variant="xi" />
+      </div>
+      <div className="hidden md:block">
+        <Logo size="lg" variant="xi" />
+      </div>
     </div>
   );
 }

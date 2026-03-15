@@ -17,12 +17,17 @@ export default function GameGrid() {
       </div>
 
       {/*
-        Mobile: 3 columns (compact cards)
-        Desktop (md+): 2 columns (larger cards)
+        Auto-fit cards by available width.
+        With the current 2 games this centers cleanly, and additional games
+        will wrap naturally without manual column changes.
       */}
       <div
-        className="grid grid-cols-3 md:grid-cols-2 max-w-4xl mx-auto border"
-        style={{ gap: "0", borderColor: colors.border }}
+        className="grid max-w-4xl mx-auto border"
+        style={{
+          gap: "0",
+          borderColor: colors.border,
+          gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
+        }}
       >
         {GAMES.map((game) => (
           <div key={game.id} className="border-b border-r" style={{ borderColor: colors.border }}>

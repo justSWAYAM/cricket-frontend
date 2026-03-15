@@ -48,7 +48,12 @@ export default function GridBoard({
             aspectRatio: "1 / 1",
           }}
         >
-          <Logo size="md" variant="full" />
+          <div className="md:hidden">
+            <Logo size="sm" variant="full" />
+          </div>
+          <div className="hidden md:block">
+            <Logo size="md" variant="full" />
+          </div>
         </div>
 
         {/* Column headers */}

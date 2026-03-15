@@ -97,36 +97,28 @@ export default function CriteriaBadge({ criterion, size = "md" }) {
       >
         {/* Logo as background */}
         {criterion.logo && (
-          <img
-            src={criterion.logo}
-            alt={criterion.code}
-            className="absolute inset-0 w-full h-full object-contain"
-            style={{
-              opacity: 0.32,
-              padding: "8px",
-              filter: "brightness(1.35) saturate(1.2) contrast(1.05)",
-            }}
-          />
+          <>
+            <img
+              src={criterion.logo}
+              alt={criterion.code}
+              className="absolute inset-0 w-full h-full object-contain"
+              style={{
+                opacity: 0.9,
+                padding: isSmall ? "6px" : "8px",
+              }}
+            />
+            <img
+              src={criterion.logo}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-contain pointer-events-none"
+              style={{
+                opacity: 0.42,
+                padding: isSmall ? "6px" : "8px",
+              }}
+            />
+          </>
         )}
-        {/* Team code overlay */}
-        <div className="relative flex flex-col items-center gap-1" style={{ padding: isSmall ? "6px" : "10px" }}>
-          <span
-            className="font-black font-mono tracking-wider leading-none"
-            style={{
-              color: style.text,
-              fontSize: isSmall ? "13px" : "18px",
-              textShadow: `0 0 12px ${style.border}`,
-            }}
-          >
-            {criterion.code}
-          </span>
-          <span
-            className="font-mono tracking-wide leading-none"
-            style={{ color: style.text, opacity: 0.7, fontSize: isSmall ? "8px" : "10px" }}
-          >
-            TEAM
-          </span>
-        </div>
       </div>
     );
   }
@@ -144,27 +136,28 @@ export default function CriteriaBadge({ criterion, size = "md" }) {
       }}
     >
       {criterion.logo && (
-        <img
-          src={criterion.logo}
-          alt={criterion.code}
-          className="absolute inset-0 w-full h-full object-contain"
-          style={{ opacity: 0.12, padding: "6px" }}
-        />
+        <>
+          <img
+            src={criterion.logo}
+            alt={criterion.code}
+            className="absolute inset-0 w-full h-full object-contain"
+            style={{
+              opacity: 0.9,
+              padding: isSmall ? "6px" : "8px",
+            }}
+          />
+          <img
+            src={criterion.logo}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-contain pointer-events-none"
+            style={{
+              opacity: 0.42,
+              padding: isSmall ? "6px" : "8px",
+            }}
+          />
+        </>
       )}
-      <div className="relative flex flex-col items-center gap-1" style={{ padding: isSmall ? "6px" : "10px" }}>
-        <span
-          className="font-black font-mono tracking-wider leading-none"
-          style={{ color: style.text, fontSize: isSmall ? "11px" : "15px" }}
-        >
-          {criterion.code}
-        </span>
-        <span
-          className="font-mono tracking-wide leading-none"
-          style={{ color: style.text, opacity: 0.6, fontSize: isSmall ? "7px" : "9px" }}
-        >
-          NATION
-        </span>
-      </div>
     </div>
   );
 }

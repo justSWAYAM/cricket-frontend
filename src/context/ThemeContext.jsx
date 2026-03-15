@@ -13,7 +13,8 @@ export const useTheme = () => {
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
     const saved = localStorage.getItem("cricketxi-theme");
-    return saved || "dark";
+    if (saved === "dark" || saved === "light") return saved;
+    return "light";
   });
 
   useEffect(() => {
@@ -27,26 +28,26 @@ export const ThemeProvider = ({ children }) => {
 
   const colors = {
     dark: {
-      bg: "#000000",
-      bgSecondary: "#0a0a0a",
-      bgTertiary: "#0d0d0d",
-      border: "#1f1f1f",
-      borderSecondary: "#333333",
-      borderLight: "rgba(255,255,255,0.025)",
-      text: "#ffffff",
-      textSecondary: "#f0f0f0",
-      textMuted: "#555555",
-      textDisabled: "#333333",
-      textGray: "#666666",
-      textDarkGray: "#444444",
-      accent: "#00ff87",
-      accentBg: "rgba(0,255,135,0.04)",
-      accentBgHover: "rgba(0,255,135,0.08)",
-      accentBorder: "#00ff87",
-      scanline: "rgba(0,0,0,0.03)",
-      watermark: "#1a1a1a",
-      marquee: "#0d0d0d",
-      marqueText: "#707070",
+      bg: "#10151c",
+      bgSecondary: "#151c25",
+      bgTertiary: "#1b2430",
+      border: "#2a3645",
+      borderSecondary: "#3b4a5d",
+      borderLight: "rgba(195,215,240,0.11)",
+      text: "#f7fbff",
+      textSecondary: "#eaf2fb",
+      textMuted: "#b2c0d1",
+      textDisabled: "#8ea0b4",
+      textGray: "#a7b6c8",
+      textDarkGray: "#8ea0b4",
+      accent: "#33d28f",
+      accentBg: "rgba(51,210,143,0.08)",
+      accentBgHover: "rgba(51,210,143,0.16)",
+      accentBorder: "#33d28f",
+      scanline: "rgba(0,0,0,0.02)",
+      watermark: "#2a3442",
+      marquee: "#17202b",
+      marqueText: "#a2b1c3",
     },
     light: {
       bg: "#ffffff",

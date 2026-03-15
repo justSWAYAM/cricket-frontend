@@ -23,7 +23,6 @@ export const NATIONALITIES = [
   { type: "nationality", code: "ENG", name: "England",      logo: "https://res.cloudinary.com/diwsrrjbd/image/upload/eng.jpg" },
   { type: "nationality", code: "NZ",  name: "New Zealand",  logo: "https://res.cloudinary.com/diwsrrjbd/image/upload/nz.jpg" },
   { type: "nationality", code: "WI",  name: "West Indies",  logo: "https://res.cloudinary.com/diwsrrjbd/image/upload/wi.jpg" },
-  { type: "nationality", code: "PAK", name: "Pakistan",     logo: "https://res.cloudinary.com/diwsrrjbd/image/upload/pak.jpg" },
   { type: "nationality", code: "SL",  name: "Sri Lanka",    logo: "https://res.cloudinary.com/diwsrrjbd/image/upload/sl.jpg" },
   { type: "nationality", code: "BAN", name: "Bangladesh",   logo: "https://res.cloudinary.com/diwsrrjbd/image/upload/ban.jpg" },
   { type: "nationality", code: "AFG", name: "Afghanistan",  logo: "https://res.cloudinary.com/diwsrrjbd/image/upload/afg.jpg" },
